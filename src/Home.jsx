@@ -1,4 +1,5 @@
 import "./Home.css"
+import Breadcrumbs from "./Breadcrumbs.jsx";
 import { useState, useRef } from 'react';
 
 const data = [
@@ -22,7 +23,7 @@ function Home(){
             <div className="banner">
                 <div className="title">ADMISION</div>
             </div>
-            <div className="breadcrumbs">Admision (en vola poner debajo del banner?)</div>
+            <div className="breadcrumbs"> <Breadcrumbs paths={[{ label: 'Admission', url: '/' }]} /> </div>
             <div className="body-carreras">
                 <div className="title-carreras">Carreras Pregrado</div>
                 <form className="form-search-carreras">

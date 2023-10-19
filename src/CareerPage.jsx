@@ -14,15 +14,16 @@ const data = [
 
 function CareerPage() {
     const breadcrumbsData = [
-        { label: 'Admision', url: '/' },
-        { label: 'Career' },
+        { label: 'Admisión', url: '/' },
+        { label: 'Arquitectura' },
       ];
     return (
         <div className = "CarrerPage">
-            <div className="banner">
+            <div className="bannerCarrera">
                 <div className="title">ARQUITECTURA</div>
-                <div><Breadcrumbs paths={breadcrumbsData} /></div>
+                <img src="acreditacionArqui.png" alt="Acreditación" className="acreditacion-image" />
             </div>
+            <div className="breadcrumbs"><Breadcrumbs paths={breadcrumbsData} /></div>
             <div className="body-carreras">
                 <div className="title-carreras">¿Qué es?</div>
                 <div className="description-box">
@@ -43,7 +44,7 @@ function CareerPage() {
             </div>
         </div>
     );
-
+}
 const CareerTable = (props) => {
     return (
         <table>
@@ -70,8 +71,5 @@ const TableRow = (props) => {
         </tr>
     );
 }
-
-
-
 
 export default CareerPage;

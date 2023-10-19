@@ -15,7 +15,7 @@ function MockCareerUnavailable() {
             </div>
             <div className="breadcrumbs"><Breadcrumbs paths={breadcrumbsData} currentPage="Carrera No Disponible"/></div>
             <div className="body-carreras">
-                Proximamente
+                <h1>Proximamente</h1>
             </div>
             </div>
     );

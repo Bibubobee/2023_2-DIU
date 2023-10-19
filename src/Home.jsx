@@ -23,7 +23,7 @@ function Home(){
             <div className="banner">
                 <div className="title">ADMISION</div>
             </div>
-            <div className="breadcrumbs"> <Breadcrumbs paths={[{ label: 'Admisión', url: '/' }]} /> </div>
+            <div className="breadcrumbs"> <Breadcrumbs paths={[{ label: 'Admisión', url: '/' }]} currentPage="Admisión"/> </div>
             <div className="body-carreras">
                 <div className="title-carreras">Carreras Pregrado</div>
                 <form className="form-search-carreras">
@@ -78,10 +78,12 @@ const CareerTable = (props) => {
 }
 
 const TableRow = (props) => {
+    const encodedCareerName = encodeURIComponent(props.nombre);
+    const url = `/carrera/${encodedCareerName}`;
     return (
         <tr>
             <td>
-                <a href="carrera">{props.nombre}</a>
+                <a href={url}>{props.nombre}</a>
             </td>
             <td>{props.campus}</td>
             <td>{props.jornada}</td>

@@ -1,14 +1,19 @@
 .breadcrumbs {
     margin: 10px 0;
     margin-left: 10px;
-  }
-.breadcrumbs a {
-    text-decoration: none;
-    color: #252526;
-    margin: 0 5px;
 }
 
-.breadcrumbs a:hover {
+.breadcrumb-link {
+    text-decoration: none;
+    color: blue;
+}
+.breadcrumb-link:hover{
     text-decoration: underline;
 }
+
+.breadcrumb-link.current {
+    text-decoration: none;
+    color: black;
+}
+
   

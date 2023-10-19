@@ -3,8 +3,8 @@ import Breadcrumbs from "./Breadcrumbs.jsx";
 import { useState, useRef } from 'react';
 
 const data = [
-    { nombre: 'Arquitectura', campus: 'San Joaquín y Casa Central', jornada: 'Diurna y Vespertina' },
-    { nombre: 'Ingeniería Civil Eléctrica', campus: 'San Joaquín y Casa Central', jornada: 'Diurna y Vespertina' },
+    { nombre: 'Arquitectura', campus: 'San Joaquín y Casa Central', jornada: 'Diurno' },
+    { nombre: 'Ingeniería Civil Eléctrica', campus: 'San Joaquín y Casa Central', jornada: 'Diurno' },
     { nombre: 'Ingeniería Civil Informática', campus: 'San Joaquín y Casa Central', jornada: 'Diurna y Vespertina' },
     { nombre: 'Ingeniería Civil Matemática', campus: 'San Joaquín y Casa Central', jornada: 'Diurna y Vespertina' },
     { nombre: 'Ingeniería Civil Química', campus: 'San Joaquín y Casa Central', jornada: 'Diurna y Vespertina' },
@@ -17,7 +17,7 @@ const data = [
 
 function Home(){
     const [searchValue, setSearchValue] = useState('');
-
+    
     return(
         <div className="home">
             <div className="banner">
@@ -26,12 +26,11 @@ function Home(){
             <div className="breadcrumbs"> <Breadcrumbs paths={[{ label: 'Admisión', url: '/' }]} /> </div>
             <div className="body-carreras">
                 <div className="title-carreras">Carreras Pregrado</div>
-                <form className="form-search-carreras">
-                    <label>Buscar Carrera:</label>
-                    <input className="search-bar" type="text" placeholder="Inserte Nombre Carrera.." value={searchValue}
-                                onChange={(e) => setSearchValue(e.target.value)}/>
-                    <input className="form-submit" type="submit" value="Buscar"></input> 
-                </form>
+                <div className="search-carreras">
+                    <label>Buscar por Carrera o Campus:</label>
+                    <input className="search-bar" type="text" placeholder="Inserte términos.." value={searchValue}
+                                onChange={(e) => setSearchValue(e.target.value)} maxLength={30}/>
+                </div>
                 <CareerTable searchTerm={searchValue}/>
             </div>
         </div>
@@ -41,7 +40,8 @@ function Home(){
 const CareerTable = (props) => {
     const filtered = data.filter(
         carrera =>
-            carrera.nombre.toLowerCase().indexOf(props.searchTerm.toLowerCase()) > -1,
+            carrera.nombre.toLowerCase().indexOf(props.searchTerm.toLowerCase()) > -1 || 
+            carrera.campus.toLowerCase().indexOf(props.searchTerm.toLowerCase()) > -1,
     );
   
     return (

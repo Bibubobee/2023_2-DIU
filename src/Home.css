@@ -23,14 +23,15 @@
     margin-top: 20px;
     margin-left: 55px;
 }
-.form-search-carreras{
+.search-carreras{
     font-size: large;
     padding-top: 20px;
     padding-bottom: 10px;
 }
 .search-bar {
     margin-left: 10px;
-    padding-right: 150px;
+    /* padding-right: 150px; */
+    width: 300px;
     font-size: large;
     border-radius: 5px;
 }

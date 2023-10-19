@@ -1,5 +1,6 @@
 import "./CareerPage.css";
 import React from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Breadcrumbs from './Breadcrumbs.jsx';
 
 const data = [
@@ -17,11 +18,14 @@ function CareerPage() {
         { label: 'Admisión', url: '/' },
         { label: 'Arquitectura' , url: '/carrera/arquitectura' },
       ];
+    useEffect(() => {
+        document.title = 'Arquitectura'; 
+    }, []); 
     return (
         <div className = "CarrerPage">
             <div className="bannerCarrera">
                 <div className="title">ARQUITECTURA</div>
-                <img src="acreditacionArqui.png" alt="Acreditación" className="acreditacion-image" />
+                <img src="/acreditacionArqui.png" alt="Acreditación" className="acreditacion-image" />
             </div>
             <div className="breadcrumbs"><Breadcrumbs paths={breadcrumbsData} currentPage="Arquitectura"/></div>
             <div className="body-carreras">

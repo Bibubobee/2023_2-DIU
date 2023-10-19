@@ -15,7 +15,7 @@ const data = [
 function CareerPage() {
     const breadcrumbsData = [
         { label: 'Admisión', url: '/' },
-        { label: 'Arquitectura' },
+        { label: 'Arquitectura' , url: '/carrera/arquitectura' },
       ];
     return (
         <div className = "CarrerPage">
@@ -23,7 +23,7 @@ function CareerPage() {
                 <div className="title">ARQUITECTURA</div>
                 <img src="acreditacionArqui.png" alt="Acreditación" className="acreditacion-image" />
             </div>
-            <div className="breadcrumbs"><Breadcrumbs paths={breadcrumbsData} /></div>
+            <div className="breadcrumbs"><Breadcrumbs paths={breadcrumbsData} currentPage="Arquitectura"/></div>
             <div className="body-carreras">
                 <div className="title-carreras">¿Qué es?</div>
                 <div className="description-box">

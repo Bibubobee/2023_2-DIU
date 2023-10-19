@@ -50,6 +50,7 @@ td, th {
     border: 1px solid gray;
     text-align: left;
     padding: 8px;
+    height: 30px;
 }
 tr:nth-child(even) {
     background-color: rgba(211, 211, 211, 0.4);

@@ -1,6 +1,6 @@
 import "./Home.css"
 import Breadcrumbs from "./Breadcrumbs.jsx";
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const data = [
     { nombre: 'Arquitectura', campus: 'San Joaquín y Casa Central', jornada: 'Diurna y Vespertina' },
@@ -17,6 +17,9 @@ const data = [
 
 function Home(){
     const [searchValue, setSearchValue] = useState('');
+    useEffect(() => {
+        document.title = 'Admisión USM'; // Set the title for the home page
+      }, []); // The empty dependency array ensures this effect runs only when the component mounts
 
     return(
         <div className="home">

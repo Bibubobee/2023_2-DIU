@@ -66,6 +66,7 @@
     background-position: center; 
     background-repeat: no-repeat;
     padding: 0% 10% 10% 0%;
+    border-radius: 50px;
 }
 table {
     flex: 1;
